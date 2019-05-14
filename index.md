@@ -16,7 +16,7 @@ Team members:
 - Data-mining goals
   - Predict sales based on day of week(which day has higher sales), promotion(If store runs promotion or not), holiday(sale on holiday) and number of customers.
 - Success criteria
-  - By identifying the relationship between promotions, holidays and day of week, we can find out how it leads to higer sales or lower sales, depends on the result, we can make the right desicion to help the company to increase its sales and make more profit.
+  - By identifying the relationship between promotions, holidays and day of week, we can find out how it leads to higher sales or lower sales, depends on the result, we can make the right desicion to help the company to increase its sales and make more profit.
 
 ### B. Data Understanding/Preparation/Source
 
@@ -30,7 +30,15 @@ Dataset URL: [https://www.kaggle.com/c/rossmann-store-sales/data](https://www.ka
     <image src="identify.png" />
   - Describing data<br/>
     <image src="describe.png" />
-    - Store means different store numbers, Day of week ranges from 1 - 7 indicates Monday - Sunday, Date has exactly day, month, year, Sales is the total sale for one day, Customer is the # of people who visits the store, Open indicates the store is open if is 1, closed if it is 0, Promo indicates either store is offering promotion with 0 or 1, State Holiday has #0 or 1, 0 means no state holiday, 1 means there is state holiday, School Holiday contains the major holidays, 0 means there is no school holiday, 1 mean there is school holiday.
+    - Store means different store numbers
+    - Day of week ranges from 1 - 7 indicates Monday - Sunday, 
+    - Date has exactly  month, day, year,
+    - Sales is the total sale for one day, 
+    - Customer is the # of people who visits the store, 
+    - Open indicates the store is open if is 1, closed if it is 0, 
+    - Promo indicates either store is offering promotion with 0 or 1, 
+    - State Holiday has #0 or 1, 0 means no state holiday, 1 means there is state holiday, 
+    - School Holiday contains the major holidays, 0 means there is no school holiday, 1 mean there is school holiday.
 - Data Preparation
   - Selecting data
     - In the table above we will select Day of week, Sales, Customers, Promo, School Holiday for us to use.
@@ -40,7 +48,7 @@ Dataset URL: [https://www.kaggle.com/c/rossmann-store-sales/data](https://www.ka
   - Formatting data
     - We will format/arrange the order of these field for later use.<br/>
     <image src="format.png" />
-	- Now we will have sales as our target/dependent variable, Day of Week, Customers, Promo, School Holiday as our independent varible.
+- Now we will have sales as our target/dependent variable, Day of Week, Customers, Promo, School Holiday as our independent varible.
 
 ### C. Model
 - Model Selection
@@ -61,15 +69,17 @@ Dataset URL: [https://www.kaggle.com/c/rossmann-store-sales/data](https://www.ka
 <image src="validation.png" />
 <image src="model1.png" />
 - Accuracy for training model is close to test model
-  - There should be no overfitting or underfitting
+- There should be no overfitting or underfitting
 - Training RMSE is close to Testing RMSE
-  - Training has lower RMSE which indicates it is better model than Test model
+- Training has lower RMSE which indicates it is better model than Test model
 - High R-square and Low P-value
-  - Model fits well, explains a lot of variation within the data and is significant
+- Model fits well, explains a lot of variation within the data and is significant
 - Testing are are similar to Training model, our model should be good.
 
-### E. Deployment
-- How do you plan to deploy/use this model(How result will be deployed)(A strategy for putting it to work in your business)?
-- Any issue the company should be aware of regarding deployment?
-- Use scenarios
-  - Get prediction results of the sales, try to find the relationship between sales, and independant variables.
+### E. Evaluation/Deployment
+- Our formula:<br/> 
+	- (-718.0498064) + (Num of Customer)*9.376163695 + (Promotion)*463.3722705 + (Holiday) * 29.38885693 +(Day of week) *  	      (-7.178433489)<br/>
+- Sales: = -718.0498064 + (555)*9.376163695 + (1)*463.3722705 + (1) * 29.38885693 +(5) * -7.178433489</br>
+  	    = 4942.59(predicted) and actual is 5263.
+- Company should be aware of that choosing day of the week or holiday are not so much important to predict the sale.
+
